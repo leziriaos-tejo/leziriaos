@@ -5,3 +5,12 @@ Codename: stable
 Architectures: amd64
 Components: main
 Description: Leziria OS APT Repository
+Date: Sun, 09 Aug 2026 13:41:00 UTC
+
+MD5Sum:
+ fda52bc6dd9133ba0d39a4dd801022aa  448 main/binary-amd64/Packages
+ 4b7e4347194d3a1ba4f55b10c7a68fc6  359 main/binary-amd64/Packages.gz
+
+SHA256:
+ 92edb7e4aace02432ef5916517a301bdb81e3cc2886059dac4411bc8071c3d91  448 main/binary-amd64/Packages
+ 7d180647bbcbd33f82c2b5f82d89dc249cc2a51805d30c3cb54d28b9fb4cc215  359 main/binary-amd64/Packages.gz

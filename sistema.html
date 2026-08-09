@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema Operativo · Lezíria OS 1.0 "Tejo"</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --azul-tejo: #1E88E5;
+      --verde-leziria: #4CAF50;
+      --cinza-ribatejo: #F5F5F5;
+      --terra-fertil: #795548;
+      --branco: #FFFFFF;
+      --texto-escuro: #212121;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #F5F5F5, #FFFFFF);
+      color: var(--texto-escuro);
+      line-height: 1.6;
+    }
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.8);
+      border-bottom: 1px solid #E0E0E0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+    .logo { font-weight: 700; color: var(--azul-tejo); letter-spacing: 0.05em; }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--texto-escuro);
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--azul-tejo); }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 24px;
+      background: var(--branco);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--azul-tejo); }
+    h2 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--terra-fertil); }
+    p { margin-bottom: 0.9rem; }
+    ul { margin-left: 1.2rem; margin-bottom: 0.9rem; }
+    li { margin-bottom: 0.4rem; }
+    footer {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      color: #757575;
+      border-top: 1px solid #E0E0E0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Lezíria OS 1.0 "Tejo"</div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="projeto.html">Projeto Educativo</a>
+        <a href="documentacao.html">Documentação</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>O Sistema Operativo Lezíria OS 1.0 "Tejo"</h1>
+
+    <h2>Base Debian</h2>
+    <p>
+      O Lezíria OS assenta diretamente em Debian, garantindo estabilidade,
+      segurança e acesso a repositórios amplos e atualizados. Esta escolha
+      permite compatibilidade com uma grande diversidade de hardware escolar,
+      incluindo equipamentos reutilizados.
+    </p>
+
+    <h2>Ambiente XFCE Educativo</h2>
+    <p>
+      O ambiente gráfico XFCE foi configurado com foco pedagógico: painéis
+      bloqueados, menus claros, hierarquia visual simples e ausência de
+      elementos supérfluos. O objetivo é reduzir a carga cognitiva e tornar
+      o ambiente previsível para alunos do 1.º Ciclo e contextos de apoio
+      especializado.
+    </p>
+
+    <h2>Ferramentas Pedagógicas Integradas</h2>
+    <ul>
+      <li>Scratch e Python para Pensamento Computacional e robótica educativa.</li>
+      <li>Arduino IDE e ferramentas afins para projetos como “Agro‑Salvaterrense”.</li>
+      <li>Suíte de escritório para produção de textos, apresentações e folhas de cálculo.</li>
+      <li>Navegadores configurados com foco em segurança e simplicidade.</li>
+      <li>Aplicações de desenho e multimédia para registos multimodais.</li>
+    </ul>
+
+    <h2>Acessibilidade e DUA</h2>
+    <p>
+      O sistema inclui leitor de ecrã, teclado virtual, perfis de contraste,
+      tipografia acessível e simplificação de navegação. Estas opções
+      operacionalizam os princípios do DUA, garantindo múltiplos meios de
+      representação, ação e expressão para alunos com diferentes perfis de
+      funcionalidade.
+    </p>
+  </main>
+
+  <footer>
+    © Lezíria OS 1.0 "Tejo" · Sistema operativo educativo baseado em Debian.
+  </footer>
+</body>
+</html>

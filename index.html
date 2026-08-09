@@ -1,1 +1,401 @@
-<h1>Leziria OS APT Repository</h1>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Lezíria OS 1.0 "Tejo"</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --azul-tejo: #1E88E5;
+      --verde-leziria: #4CAF50;
+      --cinza-ribatejo: #F5F5F5;
+      --terra-fertil: #795548;
+      --branco: #FFFFFF;
+      --texto-escuro: #212121;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #F5F5F5, #FFFFFF);
+      color: var(--texto-escuro);
+      line-height: 1.6;
+    }
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.8);
+      border-bottom: 1px solid #E0E0E0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+    .logo {
+      font-weight: 700;
+      color: var(--azul-tejo);
+      letter-spacing: 0.05em;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--texto-escuro);
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: var(--azul-tejo);
+    }
+    .hero {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 2rem;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, #E3F2FD, #FFFFFF);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--azul-tejo);
+    }
+    .hero h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--terra-fertil);
+    }
+    .hero p {
+      margin-bottom: 1.25rem;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .btn {
+      border-radius: 999px;
+      padding: 0.6rem 1.4rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background: var(--azul-tejo);
+      color: var(--branco);
+      box-shadow: 0 10px 24px rgba(30,136,229,0.35);
+    }
+    .btn-secondary {
+      background: var(--branco);
+      color: var(--azul-tejo);
+      border: 1px solid #BBDEFB;
+    }
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .pill {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(76,175,80,0.08);
+      color: var(--verde-leziria);
+    }
+    .section {
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      background: var(--branco);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.04);
+    }
+    .section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--azul-tejo);
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 0.75rem;
+    }
+    .card {
+      padding: 1rem;
+      border-radius: 16px;
+      background: #FAFAFA;
+      border: 1px solid #E0E0E0;
+    }
+    .card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: var(--terra-fertil);
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: #E3F2FD;
+      color: var(--azul-tejo);
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    footer {
+      max-width: 1100px;
+      margin: 2rem auto 1.5rem;
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      color: #757575;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #E0E0E0;
+    }
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .section {
+        padding: 1.25rem 1.25rem;
+      }
+      .nav-container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Lezíria OS 1.0 "Tejo"</div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#sistema">Sistema Operativo</a>
+        <a href="#projeto">Projeto Educativo</a>
+        <a href="#documentacao">Documentação</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Tecnologia que nasce do território.</h1>
+        <h2>Um Debian educativo, inclusivo e seguro para o 1.º Ciclo.</h2>
+        <p>
+          Lezíria OS 1.0 "Tejo" é um sistema operativo baseado em Debian,
+          desenhado como ecossistema de aprendizagem digital para escolas
+          da Lezíria Ribatejana e além. Integra acessibilidade, pensamento
+          computacional, robótica educativa e filosofia open‑source.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">⬇ Download ISO Completa</button>
+          <button class="btn btn-secondary">📘 Documentação Oficial</button>
+          <button class="btn btn-secondary">🌱 Projeto Educativo</button>
+        </div>
+      </div>
+      <div class="hero-side">
+        <span class="pill">🧠 Pensamento Computacional & Robótica</span>
+        <span class="pill">♿ Desenho Universal para a Aprendizagem (DUA)</span>
+        <span class="pill">🌍 Educação Baseada no Lugar — Lezíria Ribatejana</span>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <h3>Sobre o Lezíria OS</h3>
+      <p>
+        Lezíria OS 1.0 "Tejo" nasce do projeto educativo
+        <em>“Vamos Explorar a Lezíria Ribatejana”</em>, articulando Ecossistema
+        SMART, DUA, Pensamento Computacional e Educação Baseada no Lugar.
+        É uma resposta concreta à necessidade de integrar tecnologia com
+        intencionalidade pedagógica, inclusão e ligação ao território.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Ecossistema SMART</h4>
+          <span class="tag">Espaço</span>
+          <span class="tag">Tecnologia</span>
+          <span class="tag">Pedagogia</span>
+          <span class="tag">Ensino</span>
+          <p>
+            O sistema operativo é pensado como parte de um ecossistema:
+            sala de aula expandida, horta escolar, makerspace e laboratório
+            digital, sempre com tecnologia ao serviço da aprendizagem.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Inclusão e DUA</h4>
+          <p>
+            Implementa múltiplos meios de representação, ação e expressão:
+            leitores de ecrã, contraste elevado, teclado virtual, acessos
+            simplificados e ambiente gráfico estável para alunos com
+            diferentes perfis de funcionalidade.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Território e Sustentabilidade</h4>
+          <p>
+            Inspirado na Lezíria Ribatejana, o sistema apoia projetos de
+            compostagem, robótica agrícola e exploração do território,
+            reforçando a ligação entre escola, comunidade e ambiente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sistema" class="section">
+      <h3>O Sistema Operativo</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Base Debian</h4>
+          <p>
+            Construído diretamente sobre Debian, garantindo estabilidade,
+            segurança, repositórios robustos e compatibilidade com uma
+            vasta gama de hardware escolar, incluindo equipamentos
+            reutilizados.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Ambiente XFCE Educativo</h4>
+          <p>
+            Interface leve, com painéis bloqueados e organização visual
+            pensada para reduzir carga cognitiva. Menus claros, atalhos
+            essenciais e ausência de distrações desnecessárias.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Ferramentas Pedagógicas</h4>
+          <p>
+            Inclui Scratch, Python, Arduino IDE, suítes de escritório,
+            navegadores seguros e aplicações de desenho e multimédia,
+            alinhadas com o currículo do 1.º Ciclo e com o projeto
+            “Agro‑Salvaterrense”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projeto" class="section">
+      <h3>Projeto Educativo “Vamos Explorar a Lezíria Ribatejana”</h3>
+      <p>
+        O Lezíria OS é a camada tecnológica de um projeto pedagógico
+        territorializado, organizado em quatro módulos que articulam
+        território, sustentabilidade, robótica e competências digitais.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Módulo I — Território</h4>
+          <p>
+            Imersão na Lezíria Ribatejana: exploração com GPS e tablets,
+            registos multimodais, construção de identidade local e
+            museu/exposição final com produções dos alunos.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Módulo II — Sustentabilidade</h4>
+          <p>
+            “A Magia da Compostagem”: horta escolar como laboratório vivo,
+            jogo da separação de resíduos, portefólios digitais e
+            cidadania ecológica.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Módulo III — Robótica Agro‑Salvaterrense</h4>
+          <p>
+            Construção e programação de mini máquinas agrícolas com
+            Scratch e Python, aplicando decomposição, padrões, algoritmia
+            e depuração como prática pedagógica.
+          </p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:1rem;">
+        <h4>Módulo IV — Competências Digitais com Debian</h4>
+        <p>
+          “Descobrir Linux — Uma Aventura Digital”: exploração de um
+          sistema operativo livre, gestão do erro técnico, autorregulação
+          e literacia digital crítica, em ambiente seguro e acompanhado.
+        </p>
+      </div>
+    </section>
+
+    <section id="documentacao" class="section">
+      <h3>Documentação e Recursos</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Manuais Oficiais</h4>
+          <p>
+            Manual Técnico e Pedagógico, Manual de Exploradores (alunos)
+            e Manual para Professores, com instruções de uso em contexto
+            de sala de aula e UAE/CAA.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Guias de Instalação</h4>
+          <p>
+            Passos detalhados para instalação em equipamentos escolares,
+            reutilização de máquinas antigas e configuração básica para
+            ambientes educativos.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Recursos Visuais</h4>
+          <p>
+            Wallpapers oficiais, ícones e paleta cromática alinhados com
+            a identidade territorial da Lezíria e com o design cognitivo
+            do projeto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <h3>Roadmap de Desenvolvimento</h3>
+      <p>
+        O Lezíria OS é um projeto vivo, em evolução contínua, alinhado
+        com práticas de software livre e com investigação pedagógica.
+      </p>
+      <ul>
+        <li><strong>Versão 1.1 “Almansor”</strong> — otimizações de desempenho, refinamento de acessibilidade, melhoria de integração com robótica.</li>
+        <li><strong>Versão 2.0 “Sorraia”</strong> — expansão de ferramentas de PC, integração de ambientes de simulação e recursos para formação docente.</li>
+        <li><strong>Versão 3.0 “Ribatejo”</strong> — aprofundamento da ligação território‑tecnologia, possíveis integrações com IA educativa em contexto controlado.</li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="section">
+      <h3>Contacto e Comunidade</h3>
+      <p>
+        O Lezíria OS é um projeto aberto à colaboração de escolas,
+        professores, investigadores e comunidades educativas.
+      </p>
+      <p>
+        📧 Email: <strong>karpaspt@gmail.com</strong><br>
+        💬 Disponível para parcerias, projetos piloto e investigação
+        aplicada em educação digital inclusiva.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© Lezíria OS 1.0 "Tejo" — Projeto educativo baseado em Debian.</div>
+    <div>Inspirado na Lezíria Ribatejana · Software livre · Educação inclusiva.</div>
+  </footer>
+</body>
+</html>

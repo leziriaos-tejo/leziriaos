@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentação · Lezíria OS 1.0 "Tejo"</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --azul-tejo: #1E88E5;
+      --verde-leziria: #4CAF50;
+      --cinza-ribatejo: #F5F5F5;
+      --terra-fertil: #795548;
+      --branco: #FFFFFF;
+      --texto-escuro: #212121;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #F5F5F5, #FFFFFF);
+      color: var(--texto-escuro);
+      line-height: 1.6;
+    }
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.8);
+      border-bottom: 1px solid #E0E0E0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+    .logo { font-weight: 700; color: var(--azul-tejo); letter-spacing: 0.05em; }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--texto-escuro);
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--azul-tejo); }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 24px;
+      background: var(--branco);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--azul-tejo); }
+    h2 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--terra-fertil); }
+    p { margin-bottom: 0.9rem; }
+    ul { margin-left: 1.2rem; margin-bottom: 0.9rem; }
+    li { margin-bottom: 0.4rem; }
+    footer {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      color: #757575;
+      border-top: 1px solid #E0E0E0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Lezíria OS 1.0 "Tejo"</div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="sistema.html">Sistema Operativo</a>
+        <a href="projeto.html">Projeto Educativo</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Documentação e Recursos</h1>
+
+    <p>
+      A documentação do Lezíria OS foi concebida para apoiar a implementação
+      técnica e a integração pedagógica em contexto escolar, incluindo UAE/CAA.
+    </p>
+
+    <h2>Manuais Oficiais</h2>
+    <ul>
+      <li><strong>Manual Técnico e Pedagógico</strong> — descrição do sistema, princípios de design, recomendações de uso em sala de aula e em contextos de apoio especializado.</li>
+      <li><strong>Manual de Exploradores (Alunos)</strong> — guia visual e acessível para navegação do sistema, exploração de aplicações e gestão do erro de forma segura.</li>
+      <li><strong>Manual para Professores</strong> — apoio à migração digital docente, com propostas de atividades, alinhamento curricular e integração com Ecossistema SMART e DUA.</li>
+    </ul>
+
+    <h2>Guias de Instalação</h2>
+    <p>
+      Guias passo a passo para instalação em diferentes tipos de hardware,
+      incluindo reutilização de equipamentos antigos, configuração básica e
+      boas práticas de manutenção em ambiente escolar.
+    </p>
+
+    <h2>Recursos Visuais</h2>
+    <p>
+      Conjunto de wallpapers oficiais, ícones e paleta cromática alinhados com
+      a identidade territorial da Lezíria e com o design cognitivo do projeto,
+      reduzindo distrações e reforçando a coerência visual.
+    </p>
+
+    <h2>Acesso às Evidências</h2>
+    <p>
+      Os artefactos documentais (manuais, imagens de instalação, recursos
+      visuais) encontram-se organizados numa pasta partilhada do projeto,
+      disponível para auditoria pedagógica e análise técnica.
+    </p>
+  </main>
+
+  <footer>
+    © Lezíria OS 1.0 "Tejo" · Documentação técnica e pedagógica.
+  </footer>
+</body>
+</html>

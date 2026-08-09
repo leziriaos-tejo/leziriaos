@@ -4,44 +4,44 @@ Hash: SHA512
 Architectures: amd64
 Codename: tejo
 Components: main
-Date: Sun, 09 Aug 2026 22:57:33 +0000
+Date: Sun, 09 Aug 2026 22:59:52 +0000
 Label: LeziriaOS
 Origin: LeziriaOS
 Suite: tejo
 MD5Sum:
- 28997657f92780c94b9a712a064b1244              138 Release
+ 28c48d781921344a6efe8f67575d175b              138 Release
  d41d8cd98f00b204e9800998ecf8427e                0 main/binary-amd64/Packages
  75552edd04405bedb3b020ff6de72bf3               29 main/binary-amd64/Packages.gz
  eeb2555d10376c08177ccc3543a68eb5              205 main/binary-amd64/Release
 SHA1:
- 1d9d969ad144995af87f0cb23478bd6b3c1097e9              138 Release
+ 4ae06fddedf0f0dab4c7aff3129015fba5497bad              138 Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-amd64/Packages
  dfc9a2bd8350a2355b82a3eaed67d68aaedfc440               29 main/binary-amd64/Packages.gz
  8f0c46483328e2df96dc095695d28b0999ed478e              205 main/binary-amd64/Release
 SHA256:
- 5f4fe56b4940bc4389c647bfd567847a12eafd37650bb1bfe4706e7b8d03b59c              138 Release
+ 22a199ca9259095b3be866c7be2bd0cda147f7b0e15a94ca7ac6e99a8bccc729              138 Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-amd64/Packages
  da096bd114dae3d2f076e927587bd40ac19675ecf57b6ac24a4938246f1f59ad               29 main/binary-amd64/Packages.gz
  03fc3b33cd9abee9d07987face87de3a2d8181110a78d7d84d622292d534dd92              205 main/binary-amd64/Release
 SHA512:
- 69dbe7cc9aa60bcb0b07561d6e5202b8224b394224757e732dce611dcdf5e62ed533c626fd5adb2b1171388d9c88c903e8b1a8ab98dd18807f393d6461fa33a1              138 Release
+ 9fdc3cb9e06fa7a40494182ae8055dfad31633efc77bc65ea25962441856d6d7d033b53d2a07e785bcba4a39fdef6549ec5dc50594641548701d1290f540b9fe              138 Release
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-amd64/Packages
  0c759f863f095d582a4ca9009efa2071864e9a60d4b76aef58a93410d58a967fb2da72c8902db400ef316a2bc40dd2cd0c0b8e3c0a54e6fb7132f20a9df905bc               29 main/binary-amd64/Packages.gz
  e795e0f63d502309042c0cbdfe295ddab42eb4df6666d052680a180d291a243175692e0e9092a8ac9cdb3add194a3a2bd048388ea20033624febdae0eb565edb              205 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQJIBAEBCgAyFiEEVMQLi2wJaNwWHM9MD+NFGYBiBqEFAmp5Be0UHGxlemlyaWFv
-c0BnbWFpbC5jb20ACgkQD+NFGYBiBqGUyA//UK0hC2okZ3QNCs33y6CxWlUIGw3v
-f7uFqaS7C0xAeJYCNLEIV8Ob+6NOqobQnu+UumbAGZ4QZEmtS56oENiEPjXdcYTK
-3dq6sNZExV4k2cooM29mxxPbX0deb1f9idMmGvIvNgHBNT/r+Qpu3XVtBDJaYm1r
-ElQtmGNssRtUrCh11OXbB8Ub+jMbJ7CaftJXE7w85NE9XXKqRWKaZcFt5MAzpxXF
-Xifnn8BSx8oTct8wf953UeGGC6xb5JpHE0FJAOP2YZUx2mZL+6Eo4VXcIH91W5kI
-REb35bcPmJJVMZKwbxoVTLBB7IGicgGQOwAavdvyFsKPmHu0bBPsk9YwhpkBN3mO
-/Gh7UC9WbkPOT+HzNIb4SytIQjPKwPoPjYM6uAWLwYZFFbzAVStXWTjmaye/01Yk
-CjrDnmOCX2y4OFNPqGVwjRuK9CZkpD5FXuuf7i9z51YeEo1goQk3ZfNCJLF1WAJl
-T/ScbacIrudrHYnvvxPqiPqyzVp4KKYDjtRGdmsfXXOmc/6tnZvm3Dusz0ui7shq
-+niONbxIG0MHphose8XuYgx1J/iqTDWTwh2Piglyd8Bxg/h11Ok4lWD7YDSQbctN
-KNoaYa7r3PyoxUDyILe9u9gCI70A8nkVtDn7/FJZBDy8kjDwVva+g1hJ5cgGIfy/
-qrMlioMH4lSB63A=
-=dtK4
+iQJIBAEBCgAyFiEEVMQLi2wJaNwWHM9MD+NFGYBiBqEFAmp5BnUUHGxlemlyaWFv
+c0BnbWFpbC5jb20ACgkQD+NFGYBiBqFIlw//XLjkYWRnN/ARzQj4KxWIk9sf6VXy
+6D5/kJ+RNggBrDnIkoYwclQpHLD6u4HIkCDNateugZ6Bz4j09E6392YKp7c6rUl5
+z7/E/TpNMh26OmifnYWHwzp7SumWE9FklDl47d92QeSCIwPVj4L4tpbhITOrDMR7
+MuC89tqnSodyBzwS6+2bnpFJeGYK+Y0rNaGbsyodwR8E97zglLHwJz8Y7OBjTn5F
+vJehNNem+kLdrICSQ50ec5pA4x17uh79++OSoqO8i7H46hv4kclb3cRZszv5lyVZ
+0GpdskqOfSEMZ7WNQTtUVJ78ry44zqj/GNNKZo8OplINscgWficC/CbAi9ZZvuT6
+2rC4qiqf6cvvgpUeBivfMkzOamVR4Q1d2/WrFVcsRiuuof8yv7ltPclNvFrJcZZF
+BfLA9WhSUFfvSwFIeAG5lkADlg9m+Kw7MfPaRzA1JWfAMqj2yim/Z3SMx9aQJocQ
+T7dmTVZltWt47DWTtsoih9GU+fn1ZVmcAAe0dLA8EcAhNOwhchjaOt+lj6tQmCgW
+2Pg+o7YyBeKtyXDtyq3S5z+qUHwJA0HRT7GCDR9GSKhDFQgOKlqDeQ9RAiN9t5kt
+XNLimkYhhv0Vhos45LDUxF3ipMvw8hVTRwuE897L/0y9jwAJItXbYpWERoIySMrF
+PZY+Y3ECVmq0caM=
+=UFsV
 -----END PGP SIGNATURE-----

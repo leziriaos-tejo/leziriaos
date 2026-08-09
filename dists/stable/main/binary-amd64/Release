@@ -1,0 +1,10 @@
+Origin: Leziria OS
+Label: Leziria
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: Repositório oficial do Lezíria OS
+Date: Sun, 09 Aug 2026 12:39:00 UTC
+MD5Sum:
+ SHA256:

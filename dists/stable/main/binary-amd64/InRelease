@@ -1,0 +1,29 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Leziria OS
+Label: Leziria
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: Repositório oficial do Lezíria OS
+Date: Sun, 09 Aug 2026 12:39:00 UTC
+MD5Sum:
+ SHA256:
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEVMQLi2wJaNwWHM9MD+NFGYBiBqEFAmp4aW4ACgkQD+NFGYBi
+BqGqzw//V/R6pTHnO+1x+LHg+qHRffnUQXWV+zZ9LEJ/XgIo0HILiM6JBe+NYO8i
+HtihUCmkpUeZ2Daejt2/IrclLNTVvWMj+iGKEZGWHbCbAdacx9joRxi/1VfB/OdA
+SCHHo0Y5shIQ0Phqdl+tghaw0m5Gl9bSsioT3GWRy3VLeA7WsMnMQfCfXcMJkbwV
+FMs/5C8q87lg1Loc1dHC9FxeNWDSEaof4t9SYS1vTR4rV9/XwiiMrhhvRiXcfpKA
+/6MS1QNqzampeb9AbqMMdghI9RtByap6aA83ldxXMuEARUsRtK9OwQwftYmvXwFO
+Bngvf5/T28jSx14pjc1aWJFFWcOG4yoIGbsBLhOleELCnOo2T3oF315jRUa3AR2m
+hZqAhKASHKnHBlqWwRrilPz8su8MhPXxoM0O/YCKICbq2kNZReGAqpDBixfrpdox
+/GEGIaWy9ppWdGP99ii4BrKJehSZqEwNjE6BLXG90d65GzBABxc86dD8J3b/RB/U
+l2GJI0ldj2l8vcSuGU061C2GzQCMEDCCxTj5ZnZoaxtdmwqbFecXmX9Dvd3Cdxgi
+sm1HLU+T/HmqZQISMVkIriGOJxHhFVhYXOa0/rJyb+VDgQGDLcmHbvLjA1+h3tvE
+NgpR8LNr38Cy5AkSRg/ZEDWD8rrppG12GM8V4OxwXfu9CFjok0g=
+=AVft
+-----END PGP SIGNATURE-----

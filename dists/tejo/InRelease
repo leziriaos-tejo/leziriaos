@@ -1,36 +1,41 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Origin: LeziriaOS
-Label: LeziriaOS
-Suite: stable
-Codename: stable
-Architectures: amd64
-Components: main
-Description: Leziria OS APT Repository
-Date: Sun, 09 Aug 2026 13:41:00 UTC
-
+Date: Sun, 09 Aug 2026 22:53:20 +0000
 MD5Sum:
- fda52bc6dd9133ba0d39a4dd801022aa  448 main/binary-amd64/Packages
- 4b7e4347194d3a1ba4dd801022aa  448 main/binary-amd64/Packages
- 4b7e4347194d3a1ba4f55b10c7a68fc6  359 main/binary-amd64/Packages.gz
-
+ 33e4c508c06763ca6cf7911c61c69acd               38 Release
+ d41d8cd98f00b204e9800998ecf8427e                0 main/binary-amd64/Packages
+ 75552edd04405bedb3b020ff6de72bf3               29 main/binary-amd64/Packages.gz
+ eeb2555d10376c08177ccc3543a68eb5              205 main/binary-amd64/Release
+SHA1:
+ b6399311add26cede24fd009803acaa5e3728a3b               38 Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-amd64/Packages
+ dfc9a2bd8350a2355b82a3eaed67d68aaedfc440               29 main/binary-amd64/Packages.gz
+ 8f0c46483328e2df96dc095695d28b0999ed478e              205 main/binary-amd64/Release
 SHA256:
- 92edb7e4aace02432ef5916517a301bdb81e3cc2886059dac4411bc8071c3d91  448 main/binary-amd64/Packages
- 7d180647bbcbd33f82c2b5f82d89dc249cc2a51805d30c3cb54d28b9fb4cc215  359 main/binary-amd64/Packages.gz
+ 1d4e12923977878132841b6e4897b9bcef93ea3d2789e1000980dbad457226f9               38 Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-amd64/Packages
+ da096bd114dae3d2f076e927587bd40ac19675ecf57b6ac24a4938246f1f59ad               29 main/binary-amd64/Packages.gz
+ 03fc3b33cd9abee9d07987face87de3a2d8181110a78d7d84d622292d534dd92              205 main/binary-amd64/Release
+SHA512:
+ fe308c56ed43fa2c4011d9d62a2a208897f199645ac8a8fe5c51e62ba014ca0c6352acd1d07db44ff737175228c81808449e9c4d980ad0268c6a85103d7191dd               38 Release
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-amd64/Packages
+ 0c759f863f095d582a4ca9009efa2071864e9a60d4b76aef58a93410d58a967fb2da72c8902db400ef316a2bc40dd2cd0c0b8e3c0a54e6fb7132f20a9df905bc               29 main/binary-amd64/Packages.gz
+ e795e0f63d502309042c0cbdfe295ddab42eb4df6666d052680a180d291a243175692e0e9092a8ac9cdb3add194a3a2bd048388ea20033624febdae0eb565edb              205 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEVMQLi2wJaNwWHM9MD+NFGYBiBqEFAmp4d0wACgkQD+NFGYBi
-BqFAjA//fQ9epVrkibIgrEX/pSmOi72qvShY5PCvAkHtIK0lO4vphlPg2LFnEuCD
-OP7Slau5tmt1mXL9LkVSfgGVXzS5Gt5i9u6L+RYWrA8FBJPxiDRrJmd6uTC1IucO
-yTbL7FuIdU9ZIpRd6r0Rz0hS39Ld2eXlg+oPrYtvzUVeAw7TSkZmj6uHRan2RopN
-rX5Z9drNH9bJm4BHeavFgHiO4veVzVVvs8x26djPVbN/t+QOkmD+F65nhh1fMIGW
-n88L0NOqWLDcoVrq/nH/KmGLGTuRtcxDZl53y2oYnHDemw9EElYcCIZZke9fvDcf
-4wZ1oMuqboldSKkoQHkTho3SaMdI+WHu23WOdQVl6iDTaRoujuvOG2j9xefKNIaw
-DwOCxUpowewqrfJWADYVxjHBbz8TSXu3yO2Mhr0wcIvD1huMM+umPssTgOW00lUp
-Kc46VeTkODfZR9+/3fuHERK4yCdhGqxpjgpqUhdRLMqxja5gWEZ0BUK62uPh5+HZ
-8NHlH4jQsfNC++JXLp2KHMW37HOQ7XfUS5CHtnxuMd+IfajvGBmXf5HbHpOCVvra
-MUUM22iokJti8OwHUr6+mmfY03bskPiboQ3tSmRutA5fVOHkAMx8VkfqlGRDVTsK
-b/6ajd8bz+kNzUzMuFzbOw7Fk0LtbfRHOq9FY4uhTu0zVyfbJjY=
-=LPg4
+iQJIBAEBCgAyFiEEVMQLi2wJaNwWHM9MD+NFGYBiBqEFAmp5BQoUHGxlemlyaWFv
+c0BnbWFpbC5jb20ACgkQD+NFGYBiBqFVchAAxl1tXBNs1B9JeLMrR922sMVAHmBX
+BKcFvEdFMWg0gllw0eo0SBHhrjTa3gZMtH1tMJqO3NJvxC4Ag6u5iu1+GiH8gcJn
+x8Eg/7Ifc0IVtNQv/16wTHqFdb+XpPK6dsmmqK9IFVO6SCH87ktsulgdEtU/eCQJ
+lrCKCq4Ba6N4jqo6rQcvxNer+NETPqEL42Ip9gPm2f7moB6g8DgZ5q7Kf3+eE5xN
+ntXyIx2LJ+uOYjauvFFCs1MMvvE7v3+rVaCBNCjN5/Bu2AXUGFIOkZ4vt8SaI16h
+BP3ARFkRESUPCuJe5fUAHd+xWxXLfZL2FuyTsFyWuyYyBVZyW8gdCMghScMoJJcG
+zYL4fbM8JibEMKys0aRPQQ4j6Q/LqbGOWCDDXAsjlErWFAecgE5FC6mfojeERbel
+YOHoApgAlD3/hHe07xeNoaT9eydh9ilcBxsODDx2oRUs4ToguramTRwQsm3KAmMd
+qqaagoMcNgI4mu8pSOn0jebqn+8OOfsZqEi6XkHRyxRodoaKsYXuzRABeQE+SKtF
+TH0UNA1Kn2n9z4KY+hCpa/81NSgc28POmbpAgqPChfQLRiuQ893+4STBdRP1bXiv
+ZxE4FpEUJh5XtCLEk0wPmmXY60S9kkgNRBFZ3VDmpOSYWcHIYk551b/xPqC02zg6
+yUSDyotpGNt/9X8=
+=Sa/C
 -----END PGP SIGNATURE-----

@@ -1,3 +1,43 @@
-git add .github/workflows/build-repo.yml
-git commit -m "Adicionar GitHub Actions CI/CD para repositório LeziriaOS"
-git push
+name: Adicionar CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  build-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar dependências APT
+        run: |
+          sudo apt update
+          sudo apt install -y apt-utils apt-ftparchive gnupg gzip
+
+      - name: Importar chave GPG
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          gpg --list-keys
+
+      - name: Tornar script executável
+        run: chmod +x build-repo.sh
+
+      - name: Executar script de build
+        run: ./build-repo.sh
+
+      - name: Push automático
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "CI/CD"
+          git config user.email "actions@github.com"
+          git push

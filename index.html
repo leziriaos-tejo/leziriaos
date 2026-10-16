@@ -1,401 +1,507 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <title>Lezíria OS 1.0 "Tejo"</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    :root {
-      --azul-tejo: #1E88E5;
-      --verde-leziria: #4CAF50;
-      --cinza-ribatejo: #F5F5F5;
-      --terra-fertil: #795548;
-      --branco: #FFFFFF;
-      --texto-escuro: #212121;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(135deg, #F5F5F5, #FFFFFF);
-      color: var(--texto-escuro);
-      line-height: 1.6;
-    }
-    header {
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.8);
-      border-bottom: 1px solid #E0E0E0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1rem;
-    }
-    .logo {
-      font-weight: 700;
-      color: var(--azul-tejo);
-      letter-spacing: 0.05em;
-    }
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      color: var(--texto-escuro);
-      font-size: 0.95rem;
-    }
-    nav a:hover {
-      color: var(--azul-tejo);
-    }
-    .hero {
-      max-width: 1100px;
-      margin: 2.5rem auto;
-      padding: 2rem;
-      border-radius: 24px;
-      background: radial-gradient(circle at top left, #E3F2FD, #FFFFFF);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-      gap: 2rem;
-    }
-    .hero h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.75rem;
-      color: var(--azul-tejo);
-    }
-    .hero h2 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: var(--terra-fertil);
-    }
-    .hero p {
-      margin-bottom: 1.25rem;
-    }
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-    .btn {
-      border-radius: 999px;
-      padding: 0.6rem 1.4rem;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .btn-primary {
-      background: var(--azul-tejo);
-      color: var(--branco);
-      box-shadow: 0 10px 24px rgba(30,136,229,0.35);
-    }
-    .btn-secondary {
-      background: var(--branco);
-      color: var(--azul-tejo);
-      border: 1px solid #BBDEFB;
-    }
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-    .pill {
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(76,175,80,0.08);
-      color: var(--verde-leziria);
-    }
-    .section {
-      max-width: 1100px;
-      margin: 1.5rem auto;
-      padding: 1.5rem 2rem;
-      border-radius: 20px;
-      background: var(--branco);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.04);
-    }
-    .section h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-      color: var(--azul-tejo);
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin-top: 0.75rem;
-    }
-    .card {
-      padding: 1rem;
-      border-radius: 16px;
-      background: #FAFAFA;
-      border: 1px solid #E0E0E0;
-    }
-    .card h4 {
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-      color: var(--terra-fertil);
-    }
-    .tag {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      background: #E3F2FD;
-      color: var(--azul-tejo);
-      margin-right: 0.3rem;
-      margin-bottom: 0.3rem;
-    }
-    footer {
-      max-width: 1100px;
-      margin: 2rem auto 1.5rem;
-      padding: 1rem 2rem;
-      font-size: 0.85rem;
-      color: #757575;
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #E0E0E0;
-    }
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .section {
-        padding: 1.25rem 1.25rem;
-      }
-      .nav-container {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Lezíria OS 1.0 TEJO: sistema operativo educativo livre, seguro e inclusivo para o 1.º Ciclo do Ensino Básico, com raízes no território da Lezíria Ribatejana.">
+<meta name="theme-color" content="#052165">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Lezíria OS 1.0 TEJO">
+<meta property="og:description" content="Lezíria OS 1.0 TEJO: sistema operativo educativo livre, seguro e inclusivo para o 1.º Ciclo do Ensino Básico, com raízes no território da Lezíria Ribatejana.">
+<title>Lezíria OS 1.0 TEJO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/*
+  Layout: faixa azul-Tejo com o wallpaper a toda a largura, título por baixo,
+  onda de rio a separar do conteúdo claro; um percurso de quatro módulos
+  como curso de água; faixa azul final para transferir e contactar.
+*/
+:root {
+  /* Cor */
+  --bg: #f2f6fc;
+  --surface: #ffffff;
+  --ink: #0c1f44;
+  --ink-soft: #3b4d73;
+  --line: #d0dbee;
+  --agua: #1a62bd;
+  --campo: #1c6b2a;
+  --laranja: #b95400;
+  --sol: #f5a300;
+  --tejo-deep: #052165;
+  --on-tejo: #ffffff;
+  --on-tejo-soft: #cfdcf8;
+  --verde-marca: #7bd88a;
+  --azul-marca: #9cc8ff;
+  /* Tipo */
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #061233; --surface: #0c1f4b; --ink: #e8efff; --ink-soft: #a9b9dc; --line: #1b3469;
+    --agua: #6ab0ff; --campo: #6fd07e; --laranja: #ff9f45; --sol: #ffbf33;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #061233; --surface: #0c1f4b; --ink: #e8efff; --ink-soft: #a9b9dc; --line: #1b3469;
+  --agua: #6ab0ff; --campo: #6fd07e; --laranja: #ff9f45; --sol: #ffbf33;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--font-body);
+}
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+section[id], main[id] { scroll-margin-top: 72px; }
+:focus-visible { outline: 3px solid var(--sol); outline-offset: 3px; }
+
+/* Faixa por baixo da barra de estado em telemóveis */
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 40; background: var(--tejo-deep);
+}
+
+.wrap {
+  max-width: 1200px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip {
+  position: absolute; left: 16px; top: -100px; z-index: 50;
+  background: var(--sol); color: #0b1f4a; padding: .6rem 1rem; border-radius: 4px; font-weight: 700;
+}
+.skip:focus { top: 12px; }
+
+/* Cabeçalho */
+.site-head {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30;
+  background: var(--tejo-deep); color: var(--on-tejo);
+}
+.bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 20px; min-height: 56px; }
+.mark { font: 700 1.3rem/1 var(--font-display); letter-spacing: -.01em; text-decoration: none; display: inline-flex; gap: .3em; padding-block: 14px; }
+.mark .m1 { color: var(--verde-marca); }
+.mark .m2 { color: var(--azul-marca); font-weight: 500; }
+.site-head nav ul { display: flex; gap: clamp(12px, 3vw, 30px); list-style: none; margin: 0; padding: 0; }
+.site-head nav a {
+  display: inline-block; padding: 16px 0 12px; color: var(--on-tejo-soft); text-decoration: none;
+  font-size: .95rem; border-bottom: 2px solid transparent;
+}
+.site-head nav a:hover { color: #fff; border-bottom-color: var(--sol); }
+
+/* Hero */
+.hero { background: var(--tejo-deep); color: var(--on-tejo); }
+.hero-media { position: relative; max-width: 1600px; margin-inline: auto; height: min(47vw, 752px); overflow: hidden; }
+.hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 61%; }
+.hero-media::before, .hero-media::after { content: ""; position: absolute; left: 0; right: 0; pointer-events: none; }
+.hero-media::before { top: 0; height: 6%; background: linear-gradient(to bottom, var(--tejo-deep), transparent); }
+.hero-media::after { bottom: 0; height: 12%; background: linear-gradient(to top, var(--tejo-deep), transparent); }
+@media (min-width: 1601px) {
+  .hero-media { -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+}
+.hero-copy {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 24px clamp(28px, 5vw, 72px); align-items: end;
+  padding-top: clamp(4px, 1vw, 12px); padding-bottom: clamp(36px, 5vw, 64px);
+}
+.eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 0 0 18px; font: 500 .8rem/1.2 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--on-tejo-soft); }
+.eyebrow .ver { background: var(--sol); color: #0b1f4a; padding: .3rem .55rem; border-radius: 3px; font-weight: 500; }
+.hero h1 { margin: 0; font: 700 clamp(2.25rem, 5.2vw, 4.25rem)/1.02 var(--font-display); letter-spacing: -.025em; text-wrap: balance; }
+.hero-side p { margin: 0 0 26px; font-size: 1.1rem; color: var(--on-tejo-soft); max-width: 36rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem; padding: .85rem 1.4rem; border-radius: 6px;
+  border: 2px solid transparent; font: 700 1rem/1.2 var(--font-body); text-decoration: none; cursor: pointer;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-sol { background: var(--sol); color: #0b1f4a; }
+.btn-sol:hover { background: #ffb81f; transform: translateY(-2px); }
+.btn-line { border-color: rgba(255, 255, 255, .7); color: #fff; background: transparent; }
+.btn-line:hover { background: rgba(255, 255, 255, .12); transform: translateY(-2px); }
+.wave { display: block; width: 100%; height: clamp(34px, 5vw, 72px); color: var(--bg); }
+.wave-flip { transform: scaleY(-1); }
+
+/* Secções */
+.band { padding-block: clamp(52px, 8vw, 104px); }
+.sec-head { max-width: 46rem; margin-bottom: clamp(28px, 4vw, 48px); }
+.kicker { margin: 0 0 12px; font: 500 .8rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--agua); }
+h2 { margin: 0; font: 700 clamp(1.75rem, 3.6vw, 2.75rem)/1.08 var(--font-display); letter-spacing: -.02em; text-wrap: balance; }
+h3 { margin: 0 0 10px; font: 700 1.25rem/1.2 var(--font-display); letter-spacing: -.01em; text-wrap: balance; }
+p { margin: 0 0 1em; }
+.lead { color: var(--ink-soft); font-size: 1.1rem; margin-top: 16px; }
+
+/* Pilares */
+.pillars { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 20px; }
+.pillar { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 28px; min-width: 0; }
+.pillar:nth-child(1) { --c: var(--agua); }
+.pillar:nth-child(2) { --c: var(--laranja); }
+.pillar:nth-child(3) { --c: var(--campo); }
+.ico { width: 46px; height: 46px; margin-bottom: 18px; color: var(--c); stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.pillar p { margin: 0; color: var(--ink-soft); }
+abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
+
+/* Técnica */
+.tech { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.tech-text > div + div { margin-top: 36px; }
+.tech-text p { color: var(--ink-soft); margin: 0; }
+.tools { margin: 0; }
+.tools div { display: grid; grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr); gap: 4px 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+.tools div:last-child { border-bottom: 1px solid var(--line); }
+.tools dt { font: 500 .9rem/1.6 var(--font-mono); color: var(--campo); }
+.tools dd { margin: 0; color: var(--ink-soft); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 16px 0 0; padding: 0; }
+.chips li { font: 500 .85rem/1 var(--font-mono); padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); }
+
+.term { margin: 0; background: #04112b; color: #dce7ff; border: 1px solid #14306a; border-radius: 10px; overflow: hidden; font: 400 .9rem/1.55 var(--font-mono); }
+.term-bar { padding: 10px 18px; background: #0a1d47; color: #9fb4e6; font-size: .8rem; letter-spacing: .04em; }
+.term-body { padding: 18px 18px 24px; }
+.term .prompt { margin: 0 0 14px; }
+.term .prompt b { color: #6fd07e; font-weight: 500; }
+.term dl { margin: 0; display: grid; gap: 6px; }
+.term dl div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; }
+.term dt { color: #ffbf33; }
+.term dd { margin: 0; overflow-wrap: anywhere; }
+
+/* Percurso do projeto */
+.course { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; position: relative; }
+.course::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 22px; height: 16px; transform: translateY(-50%);
+  background: linear-gradient(90deg, var(--agua), var(--campo), var(--laranja), var(--sol));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='16' viewBox='0 0 48 16'%3E%3Cpath d='M0 8Q12 0 24 8T48 8' fill='none' stroke='%23000' stroke-width='3'/%3E%3C/svg%3E") repeat-x center / 48px 16px;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='16' viewBox='0 0 48 16'%3E%3Cpath d='M0 8Q12 0 24 8T48 8' fill='none' stroke='%23000' stroke-width='3'/%3E%3C/svg%3E") repeat-x center / 48px 16px;
+}
+.stop { position: relative; min-width: 0; }
+.stop:nth-child(1) { --c: var(--agua); }
+.stop:nth-child(2) { --c: var(--campo); }
+.stop:nth-child(3) { --c: var(--laranja); }
+.stop:nth-child(4) { --c: var(--sol); }
+.badge {
+  position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--bg); border: 3px solid var(--c); font: 700 1rem/1 var(--font-display); color: var(--ink); margin-bottom: 20px;
+}
+.stop .tag { display: block; margin-bottom: 8px; font: 500 .75rem/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.stop p { margin: 0; color: var(--ink-soft); }
+
+/* Transferir e rodapé */
+.dl-band { background: var(--tejo-deep); color: var(--on-tejo); padding-block: 0 clamp(48px, 7vw, 88px); }
+.dl-band .wave { color: var(--bg); margin-bottom: clamp(28px, 4vw, 48px); }
+.dl-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.dl-band .kicker { color: var(--azul-marca); }
+.dl-band p { color: var(--on-tejo-soft); }
+.dl-band .actions { margin-top: 28px; }
+.dl-band .alt { margin: 18px 0 0; font-size: .92rem; }
+.dl-band .alt a { color: var(--sol); font-weight: 700; }
+.specs { margin: 0; font-family: var(--font-mono); font-size: .9rem; }
+.specs div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 12px; padding: 11px 0; border-top: 1px solid rgba(255, 255, 255, .18); }
+.specs div:last-child { border-bottom: 1px solid rgba(255, 255, 255, .18); }
+.specs dt { color: var(--azul-marca); }
+.specs dd { margin: 0; overflow-wrap: anywhere; }
+.site-foot { background: var(--tejo-deep); color: var(--on-tejo-soft); padding-block: 0 max(40px, env(safe-area-inset-bottom, 0px)); font-size: .92rem; }
+.foot-grid { border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 28px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 20px clamp(32px, 5vw, 72px); }
+.foot-grid p { margin: 0 0 6px; }
+.foot-grid strong { color: #fff; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.contact a.mail { color: var(--sol); font-weight: 700; overflow-wrap: anywhere; }
+.copy { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .5); border-radius: 4px; padding: .35rem .75rem; font: 500 .85rem/1.2 var(--font-body); cursor: pointer; }
+.copy:hover { background: rgba(255, 255, 255, .12); }
+.copy-msg { min-height: 1.4em; margin-top: 6px; font-size: .85rem; color: var(--verde-marca); }
+
+.specs .hash { font-size: .8rem; line-height: 1.5; user-select: all; }
+.verify { margin-top: 22px; font-size: .92rem; }
+.verify summary { cursor: pointer; color: var(--on-tejo); font-weight: 700; }
+.verify p { margin: 12px 0 0; }
+.verify pre { margin: 8px 0 0; padding: 12px 14px; background: rgba(0, 0, 0, .3); border-radius: 6px; overflow-x: auto; font: 400 .82rem/1.5 var(--font-mono); color: #dce7ff; }
+
+/* Ecrãs estreitos */
+@media (max-width: 960px) {
+  .tech, .dl-grid, .foot-grid, .hero-copy { grid-template-columns: minmax(0, 1fr); }
+  .course { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .course::before {
+    left: 22px; right: auto; top: 22px; bottom: 22px; width: 16px; height: auto; transform: translateX(-50%);
+    background: linear-gradient(180deg, var(--agua), var(--campo), var(--laranja), var(--sol));
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='48' viewBox='0 0 16 48'%3E%3Cpath d='M8 0Q0 12 8 24T8 48' fill='none' stroke='%23000' stroke-width='3'/%3E%3C/svg%3E") repeat-y center / 16px 48px;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='48' viewBox='0 0 16 48'%3E%3Cpath d='M8 0Q0 12 8 24T8 48' fill='none' stroke='%23000' stroke-width='3'/%3E%3C/svg%3E") repeat-y center / 16px 48px;
+  }
+  .stop { padding-left: 68px; }
+  .badge { position: absolute; left: 0; top: 0; margin: 0; }
+}
+@media (max-width: 700px) {
+  .hero-media { height: clamp(300px, 100vw, 480px); }
+  .tools div, .specs div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .term dl div { grid-template-columns: 6.2rem minmax(0, 1fr); gap: 10px; }
+}
+@media (max-width: 480px) {
+  .mark { display: none; }
+  .site-head nav ul { gap: 14px; }
+  .site-head nav a { font-size: .88rem; }
+  .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+  .btn:hover { transform: none; }
+}
+</style>
+
 </head>
 <body>
-  <header>
-    <div class="nav-container">
-      <div class="logo">Lezíria OS 1.0 "Tejo"</div>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#sistema">Sistema Operativo</a>
-        <a href="#projeto">Projeto Educativo</a>
-        <a href="#documentacao">Documentação</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
+<a class="skip" href="#sobre">Saltar para o conteúdo</a>
 
-  <main>
-    <section class="hero">
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="mark" href="#topo" aria-label="Lezíria OS, início"><span class="m1">Lezíria</span><span class="m2">OS</span></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#tecnica">Técnica</a></li>
+        <li><a href="#projeto">Projeto</a></li>
+        <li><a href="#transferir">Transferir</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="hero-media">
+      <img src="wallpaper-leziria-os.jpg" width="1920" height="1081" fetchpriority="high"
+           alt="Logótipo da Lezíria OS: um círculo com o sol a nascer sobre o rio Tejo, um campino a cavalo, um touro, árvores e um pequeno robô com uma engrenagem e um átomo.">
+    </div>
+    <div class="wrap hero-copy">
       <div>
-        <h1>Tecnologia que nasce do território.</h1>
-        <h2>Um Debian educativo, inclusivo e seguro para o 1.º Ciclo.</h2>
-        <p>
-          Lezíria OS 1.0 "Tejo" é um sistema operativo baseado em Debian,
-          desenhado como ecossistema de aprendizagem digital para escolas
-          da Lezíria Ribatejana e além. Integra acessibilidade, pensamento
-          computacional, robótica educativa e filosofia open‑source.
-        </p>
-        <div class="hero-buttons">
-          <button class="btn btn-primary">⬇ Download ISO Completa</button>
-          <button class="btn btn-secondary">📘 Documentação Oficial</button>
-          <button class="btn btn-secondary">🌱 Projeto Educativo</button>
-        </div>
+        <p class="eyebrow"><span class="ver">1.0 TEJO</span><span>Sistema operativo educativo livre</span></p>
+        <h1 id="hero-titulo"><span class="visually-hidden">Lezíria OS 1.0 TEJO. </span>Tecnologia com raízes no território.</h1>
       </div>
       <div class="hero-side">
-        <span class="pill">🧠 Pensamento Computacional & Robótica</span>
-        <span class="pill">♿ Desenho Universal para a Aprendizagem (DUA)</span>
-        <span class="pill">🌍 Educação Baseada no Lugar — Lezíria Ribatejana</span>
+        <p>Um sistema operativo educativo livre, seguro e inclusivo, concebido para o 1.º Ciclo do Ensino Básico. Desenvolvido no âmbito do projeto “Vamos Explorar a Lezíria Ribatejana”, alia o Pensamento Computacional e a Robótica Educativa à identidade da Lezíria.</p>
+        <div class="actions">
+          <a class="btn btn-sol" href="#transferir">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
+            Transferir ISO (x86_64)
+          </a>
+          <a class="btn btn-line" href="#projeto">Conhecer o projeto</a>
+        </div>
       </div>
-    </section>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C180 8 360 8 540 36S900 72 1080 40S1320 4 1440 30V72H0Z" fill="currentColor"/></svg>
+  </section>
 
-    <section id="sobre" class="section">
-      <h3>Sobre o Lezíria OS</h3>
-      <p>
-        Lezíria OS 1.0 "Tejo" nasce do projeto educativo
-        <em>“Vamos Explorar a Lezíria Ribatejana”</em>, articulando Ecossistema
-        SMART, DUA, Pensamento Computacional e Educação Baseada no Lugar.
-        É uma resposta concreta à necessidade de integrar tecnologia com
-        intencionalidade pedagógica, inclusão e ligação ao território.
-      </p>
-      <div class="grid-3">
-        <div class="card">
-          <h4>Ecossistema SMART</h4>
-          <span class="tag">Espaço</span>
-          <span class="tag">Tecnologia</span>
-          <span class="tag">Pedagogia</span>
-          <span class="tag">Ensino</span>
-          <p>
-            O sistema operativo é pensado como parte de um ecossistema:
-            sala de aula expandida, horta escolar, makerspace e laboratório
-            digital, sempre com tecnologia ao serviço da aprendizagem.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Inclusão e DUA</h4>
-          <p>
-            Implementa múltiplos meios de representação, ação e expressão:
-            leitores de ecrã, contraste elevado, teclado virtual, acessos
-            simplificados e ambiente gráfico estável para alunos com
-            diferentes perfis de funcionalidade.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Território e Sustentabilidade</h4>
-          <p>
-            Inspirado na Lezíria Ribatejana, o sistema apoia projetos de
-            compostagem, robótica agrícola e exploração do território,
-            reforçando a ligação entre escola, comunidade e ambiente.
-          </p>
-        </div>
+  <section class="band" id="sobre" aria-labelledby="sobre-titulo">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Para a escola</p>
+        <h2 id="sobre-titulo">Muito mais que um sistema operativo</h2>
       </div>
-    </section>
-
-    <section id="sistema" class="section">
-      <h3>O Sistema Operativo</h3>
-      <div class="grid-3">
-        <div class="card">
-          <h4>Base Debian</h4>
-          <p>
-            Construído diretamente sobre Debian, garantindo estabilidade,
-            segurança, repositórios robustos e compatibilidade com uma
-            vasta gama de hardware escolar, incluindo equipamentos
-            reutilizados.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Ambiente XFCE Educativo</h4>
-          <p>
-            Interface leve, com painéis bloqueados e organização visual
-            pensada para reduzir carga cognitiva. Menus claros, atalhos
-            essenciais e ausência de distrações desnecessárias.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Ferramentas Pedagógicas</h4>
-          <p>
-            Inclui Scratch, Python, Arduino IDE, suítes de escritório,
-            navegadores seguros e aplicações de desenho e multimédia,
-            alinhadas com o currículo do 1.º Ciclo e com o projeto
-            “Agro‑Salvaterrense”.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projeto" class="section">
-      <h3>Projeto Educativo “Vamos Explorar a Lezíria Ribatejana”</h3>
-      <p>
-        O Lezíria OS é a camada tecnológica de um projeto pedagógico
-        territorializado, organizado em quatro módulos que articulam
-        território, sustentabilidade, robótica e competências digitais.
-      </p>
-      <div class="grid-3">
-        <div class="card">
-          <h4>Módulo I — Território</h4>
-          <p>
-            Imersão na Lezíria Ribatejana: exploração com GPS e tablets,
-            registos multimodais, construção de identidade local e
-            museu/exposição final com produções dos alunos.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Módulo II — Sustentabilidade</h4>
-          <p>
-            “A Magia da Compostagem”: horta escolar como laboratório vivo,
-            jogo da separação de resíduos, portefólios digitais e
-            cidadania ecológica.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Módulo III — Robótica Agro‑Salvaterrense</h4>
-          <p>
-            Construção e programação de mini máquinas agrícolas com
-            Scratch e Python, aplicando decomposição, padrões, algoritmia
-            e depuração como prática pedagógica.
-          </p>
-        </div>
-      </div>
-      <div class="card" style="margin-top:1rem;">
-        <h4>Módulo IV — Competências Digitais com Debian</h4>
-        <p>
-          “Descobrir Linux — Uma Aventura Digital”: exploração de um
-          sistema operativo livre, gestão do erro técnico, autorregulação
-          e literacia digital crítica, em ambiente seguro e acompanhado.
-        </p>
-      </div>
-    </section>
-
-    <section id="documentacao" class="section">
-      <h3>Documentação e Recursos</h3>
-      <div class="grid-3">
-        <div class="card">
-          <h4>Manuais Oficiais</h4>
-          <p>
-            Manual Técnico e Pedagógico, Manual de Exploradores (alunos)
-            e Manual para Professores, com instruções de uso em contexto
-            de sala de aula e UAE/CAA.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Guias de Instalação</h4>
-          <p>
-            Passos detalhados para instalação em equipamentos escolares,
-            reutilização de máquinas antigas e configuração básica para
-            ambientes educativos.
-          </p>
-        </div>
-        <div class="card">
-          <h4>Recursos Visuais</h4>
-          <p>
-            Wallpapers oficiais, ícones e paleta cromática alinhados com
-            a identidade territorial da Lezíria e com o design cognitivo
-            do projeto.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="roadmap" class="section">
-      <h3>Roadmap de Desenvolvimento</h3>
-      <p>
-        O Lezíria OS é um projeto vivo, em evolução contínua, alinhado
-        com práticas de software livre e com investigação pedagógica.
-      </p>
-      <ul>
-        <li><strong>Versão 1.1 “Almansor”</strong> — otimizações de desempenho, refinamento de acessibilidade, melhoria de integração com robótica.</li>
-        <li><strong>Versão 2.0 “Sorraia”</strong> — expansão de ferramentas de PC, integração de ambientes de simulação e recursos para formação docente.</li>
-        <li><strong>Versão 3.0 “Ribatejo”</strong> — aprofundamento da ligação território‑tecnologia, possíveis integrações com IA educativa em contexto controlado.</li>
+      <ul class="pillars">
+        <li class="pillar">
+          <svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="9" r="5"/><circle cx="9" cy="34" r="5"/><circle cx="35" cy="34" r="5"/><path d="M19.5 13.5 11.5 29.5M24.5 13.5l8 16M14 34h16"/></svg>
+          <h3>Ecossistema SMART</h3>
+          <p>A sala de aula expande-se para a horta escolar, laboratórios digitais e para a própria paisagem da Lezíria. A tecnologia atua sempre ao serviço da aprendizagem, e não como um fim em si mesma.</p>
+        </li>
+        <li class="pillar">
+          <svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="8" r="4.5"/><path d="M7 19h30M22 19v12M22 31l-8 11M22 31l8 11"/></svg>
+          <h3>Inclusão e <abbr title="Desenho Universal para a Aprendizagem">DUA</abbr></h3>
+          <p>Desenhado para todos os perfis funcionais (incluindo UAE/<abbr title="Comunicação Aumentativa e Alternativa">CAA</abbr>). Integra leitores de ecrã (Orca), teclado virtual e lupa (KMag), com um ambiente visual pensado para reduzir a carga cognitiva.</p>
+        </li>
+        <li class="pillar">
+          <svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 40V18"/><path d="M22 26C13 26 8 20 8 12c9 0 14 5 14 14Z"/><path d="M22 21c0-7 5-12 14-12 0 8-5 12-14 12Z"/></svg>
+          <h3>Território e Sustentabilidade</h3>
+          <p>Inspirado na Lezíria Ribatejana, o sistema apoia projetos reais de compostagem e robótica agrícola, combatendo o estigma de exclusão tecnológica no meio rural.</p>
+        </li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section id="contacto" class="section">
-      <h3>Contacto e Comunidade</h3>
-      <p>
-        O Lezíria OS é um projeto aberto à colaboração de escolas,
-        professores, investigadores e comunidades educativas.
-      </p>
-      <p>
-        📧 Email: <strong>leziriaos@gmail.com</strong><br>
-        💬 Disponível para parcerias, projetos piloto e investigação
-        aplicada em educação digital inclusiva.
-      </p>
-    </section>
-  </main>
+  <section class="band" id="tecnica" aria-labelledby="tecnica-titulo" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Por dentro</p>
+        <h2 id="tecnica-titulo">Seguro, leve e preparado para escolas</h2>
+      </div>
+      <div class="tech">
+        <div class="tech-text">
+          <div>
+            <h3>Base Debian e Xfce</h3>
+            <p>Construído para garantir estabilidade, segurança e para prolongar a vida útil de computadores escolares antigos, como os portáteis Magalhães, privilegiando a reutilização do parque informático.</p>
+          </div>
+          <div>
+            <h3>Ferramentas exclusivas</h3>
+            <dl class="tools">
+              <div><dt>Lezíria Tools</dt><dd>Centraliza a administração do sistema.</dd></div>
+              <div><dt>Lezíria Cleanup</dt><dd>Mantém o espaço em disco livre.</dd></div>
+              <div><dt>Lezíria Format USB</dt><dd>Formata pens de forma segura.</dd></div>
+            </dl>
+          </div>
+          <div>
+            <h3>Catálogo pedagógico incluído</h3>
+            <p>Tudo pronto a usar, sem necessidade de configurações complexas.</p>
+            <ul class="chips">
+              <li>Scratch 3</li><li>Python</li><li>Arduino IDE</li><li>GeoGebra</li><li>GIMP</li><li>LibreOffice</li><li>GCompris</li><li>Orca</li><li>e muito mais</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="term">
+          <figcaption class="term-bar">user@LEZIRIA: ~</figcaption>
+          <div class="term-body">
+            <p class="prompt"><b>$</b> fastfetch</p>
+            <dl>
+              <div><dt>SO</dt><dd>Lezíria OS 1.0 TEJO</dd></div>
+              <div><dt>Base</dt><dd>Debian GNU/Linux 13 (trixie)</dd></div>
+              <div><dt>Ambiente</dt><dd>Xfce 4.20</dd></div>
+              <div><dt>Tema</dt><dd>Arc-Dark</dd></div>
+              <div><dt>Ícones</dt><dd>Papirus-Dark</dd></div>
+              <div><dt>Aplicações</dt><dd>Flatpak</dd></div>
+              <div><dt>Idioma</dt><dd>pt_PT.UTF-8</dd></div>
+              <div><dt>Arquitetura</dt><dd>x86_64</dd></div>
+              <div><dt>Concebido</dt><dd>Ribatejo, 2026</dd></div>
+            </dl>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <div>© Lezíria OS 1.0 "Tejo" — Idealizado e Concebido no Ribatejo por Pedro Nogueira em 2026</div>
-    <div>Inspirado na Lezíria Ribatejana · Software livre (Projeto educativo baseado em Debian) · Educação inclusiva.</div>
-  </footer>
+  <section class="band" id="projeto" aria-labelledby="projeto-titulo" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Projeto educativo</p>
+        <h2 id="projeto-titulo">Vamos Explorar a Lezíria Ribatejana</h2>
+        <p class="lead">Quatro módulos para o 1.º Ciclo, do território à autonomia digital.</p>
+      </div>
+      <ol class="course">
+        <li class="stop">
+          <span class="badge" aria-hidden="true">I</span>
+          <span class="tag">Portefólios digitais</span>
+          <h3>Imersão no Território</h3>
+          <p>Exploração geográfica e cultural. Criação de portefólios digitais multimodais que valorizam a identidade local e as tradições ribatejanas.</p>
+        </li>
+        <li class="stop">
+          <span class="badge" aria-hidden="true">II</span>
+          <span class="tag">Horta escolar</span>
+          <h3>Magia da Compostagem</h3>
+          <p>A horta escolar como laboratório vivo. Integra gamificação e pedagogia ecológica para promover a cidadania e a sustentabilidade ambiental.</p>
+        </li>
+        <li class="stop">
+          <span class="badge" aria-hidden="true">III</span>
+          <span class="tag">Robótica</span>
+          <h3>Agro-Salvaterrense</h3>
+          <p>Robótica e Pensamento Computacional. Desafio de programação de uma máquina agrícola, usando a depuração (gestão do erro) como prática pedagógica.</p>
+        </li>
+        <li class="stop">
+          <span class="badge" aria-hidden="true">IV</span>
+          <span class="tag">Software livre</span>
+          <h3>Descobrir Linux</h3>
+          <p>Uma aventura digital em sistema operativo livre. Fomenta a autorregulação, a entreajuda e a literacia digital crítica em ambiente seguro.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="dl-band" id="transferir" aria-labelledby="transferir-titulo">
+    <svg class="wave wave-flip" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C180 8 360 8 540 36S900 72 1080 40S1320 4 1440 30V72H0Z" fill="currentColor"/></svg>
+    <div class="wrap">
+      <div class="dl-grid">
+        <div>
+          <p class="kicker">Edição 1.0 TEJO</p>
+          <h2 id="transferir-titulo">Leva a Lezíria para a tua escola</h2>
+          <p style="margin-top:16px">Imagem ISO live para computadores x86_64, com o catálogo pedagógico, as ferramentas da Lezíria e o ambiente em português de Portugal.</p>
+          <div class="actions">
+            <a class="btn btn-sol" href="https://archive.org/download/www.leziriaos.pt/leziria-os-1.0-tejo-amd64.iso" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
+              Transferir ISO (x86_64)
+            </a>
+            <a class="btn btn-line" href="manual-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">Manual do sistema (PDF)</a>
+          </div>
+          <p class="alt">Alojada no Internet Archive. <a href="https://archive.org/details/www.leziriaos.pt" rel="noopener">Ver a página da ISO</a> · <a href="https://archive.org/download/www.leziriaos.pt/www.leziriaos.pt_archive.torrent" rel="noopener">Torrent</a></p>
+        </div>
+        <div>
+          <dl class="specs">
+            <div><dt>Edição</dt><dd>Lezíria OS 1.0 TEJO</dd></div>
+            <div><dt>Base</dt><dd>Debian 13, Xfce 4.20</dd></div>
+            <div><dt>Arquitetura</dt><dd>x86_64</dd></div>
+            <div><dt>Idioma</dt><dd>Português (pt_PT)</dd></div>
+            <div><dt>Tamanho</dt><dd>6,8 GB (6 762 921 984 bytes)</dd></div>
+            <div><dt>SHA-256</dt><dd class="hash">4B2BC57D2831492EE29ECA18DB5DE1EAD7A39DD54CAFB7BACCF92C588E1E0ECF</dd></div>
+            <div><dt>Documento</dt><dd>LZOS-AUT-2026-001</dd></div>
+            <div><dt>Manual</dt><dd>PDF, 10 páginas (614 KB)</dd></div>
+          </dl>
+          <details class="verify">
+            <summary>Como verificar a transferência</summary>
+            <p>Depois de transferires a ISO, calcula o SHA-256 do ficheiro. O resultado tem de ser igual ao valor acima.</p>
+            <p>No Windows (PowerShell):</p>
+            <pre>Get-FileHash .\leziria-os-1.0-tejo-amd64.iso -Algorithm SHA256</pre>
+            <p>No Linux:</p>
+            <pre>sha256sum leziria-os-1.0-tejo-amd64.iso</pre>
+            <p>O Windows mostra o valor em maiúsculas e o Linux em minúsculas. É o mesmo valor.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p><strong>Lezíria OS 1.0 TEJO</strong></p>
+        <p>Idealizado e concebido no Ribatejo por Pedro Nogueira (2026).</p>
+        <p>Projeto educativo inclusivo com apoio digital.</p>
+      </div>
+      <div>
+        <p><strong>Contactar o projeto</strong></p>
+        <div class="contact">
+          <a class="mail" id="email-txt" href="mailto:leziriaos@gmail.com">leziriaos@gmail.com</a>
+          <button class="copy" id="copiar-email" type="button">Copiar</button>
+        </div>
+        <p class="copy-msg" id="copiar-msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copiar-email');
+  var txt = document.getElementById('email-txt');
+  var msg = document.getElementById('copiar-msg');
+  if (!btn || !txt || !msg) return;
+  var timer;
+  function say(t) {
+    msg.textContent = t;
+    clearTimeout(timer);
+    timer = setTimeout(function () { msg.textContent = ''; }, 3500);
+  }
+  function selectText() {
+    var r = document.createRange();
+    r.selectNodeContents(txt);
+    var s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+    say('Endereço selecionado. Prime Ctrl+C para copiar.');
+  }
+  btn.addEventListener('click', function () {
+    var value = txt.textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(value).then(function () { say('Endereço copiado.'); }, selectText);
+    } else {
+      selectText();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

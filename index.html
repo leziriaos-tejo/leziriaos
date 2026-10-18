@@ -103,13 +103,11 @@ body::before {
 
 /* Hero */
 .hero { background: var(--tejo-deep); color: var(--on-tejo); }
-.hero-media { position: relative; max-width: 1600px; margin-inline: auto; height: min(47vw, 752px); overflow: hidden; }
-.hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 61%; }
-.hero-media::before, .hero-media::after { content: ""; position: absolute; left: 0; right: 0; pointer-events: none; }
-.hero-media::before { top: 0; height: 6%; background: linear-gradient(to bottom, var(--tejo-deep), transparent); }
-.hero-media::after { bottom: 0; height: 12%; background: linear-gradient(to top, var(--tejo-deep), transparent); }
+.hero-media { position: relative; max-width: 1600px; margin-inline: auto; aspect-ratio: 1920 / 1081; overflow: hidden; }
+.hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-media::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3%; pointer-events: none; background: linear-gradient(to top, var(--tejo-deep), transparent); }
 @media (min-width: 1601px) {
-  .hero-media { -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+  .hero-media { -webkit-mask-image: linear-gradient(to right, transparent, #000 2.5%, #000 97.5%, transparent); mask-image: linear-gradient(to right, transparent, #000 2.5%, #000 97.5%, transparent); }
 }
 .hero-copy {
   display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 24px clamp(28px, 5vw, 72px); align-items: end;
@@ -206,7 +204,10 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
 /* Instalação */
 #transferir { padding-bottom: clamp(32px, 5vw, 56px); }
 .inst-inner { border-top: 1px solid rgba(255, 255, 255, .18); padding-top: clamp(32px, 5vw, 56px); }
-.inst-head { max-width: 46rem; margin-bottom: clamp(24px, 4vw, 40px); }
+.inst-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 32px; margin-bottom: clamp(24px, 4vw, 40px); }
+.inst-head { max-width: 46rem; }
+.manual-row { border-color: var(--sol); background: rgba(245, 163, 0, .08); }
+.manual-row + .archive-row { margin-top: 16px; }
 .inst-head p:last-child { margin: 16px 0 0; }
 .tools-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 20px; }
 .tool { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 24px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 10px; background: rgba(255, 255, 255, .06); }
@@ -257,7 +258,6 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
   .badge { position: absolute; left: 0; top: 0; margin: 0; }
 }
 @media (max-width: 700px) {
-  .hero-media { height: clamp(300px, 100vw, 480px); }
   .tools div, .specs div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .term dl div { grid-template-columns: 6.2rem minmax(0, 1fr); gap: 10px; }
 }
@@ -297,7 +297,7 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
   <section class="hero" aria-labelledby="hero-titulo">
     <div class="hero-media">
       <img src="wallpaper-leziria-os.jpg" width="1920" height="1081" fetchpriority="high"
-           alt="Logótipo da Lezíria OS: um círculo com o sol a nascer sobre o rio Tejo, um campino a cavalo, um touro, árvores e um pequeno robô com uma engrenagem e um átomo.">
+           alt="Cartaz da Lezíria OS 1.0 TEJO: um grupo de crianças diversas e sorridentes, com tablet, auriculares e livros, à volta do logótipo com o sol a nascer sobre o rio Tejo. Frases: «Tecnologia que inclui, Educação que une!» e «Para todas as crianças, sem exceções!». Em baixo: acessibilidade, aprendizagem sem barreiras, inclusão, NEE e equidade.">
     </div>
     <div class="wrap hero-copy">
       <div>
@@ -475,10 +475,16 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
   <section class="dl-band inst" id="instalacao" aria-labelledby="instalacao-titulo">
     <div class="wrap">
       <div class="inst-inner">
-        <div class="inst-head">
-          <p class="kicker">Instalação</p>
-          <h2 id="instalacao-titulo">Prepara a pen USB com um destes três programas</h2>
-          <p>Precisas de uma pen USB com 16 GB ou mais (o mínimo é 8 GB), da imagem da Lezíria OS e de um dos programas abaixo. Escolhe só um: todos preparam uma pen que arranca a Lezíria OS. Tudo o que estiver na pen é apagado.</p>
+        <div class="inst-top">
+          <div class="inst-head">
+            <p class="kicker">Instalação</p>
+            <h2 id="instalacao-titulo">Prepara a pen USB com um destes três programas</h2>
+            <p>Precisas de uma pen USB com 16 GB ou mais (o mínimo é 8 GB), da imagem da Lezíria OS e de um dos programas abaixo. Escolhe só um: todos preparam uma pen que arranca a Lezíria OS. Tudo o que estiver na pen é apagado.</p>
+          </div>
+          <a class="btn btn-sol" href="manual-instalacao-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></svg>
+            Manual de instalação (PDF)
+          </a>
         </div>
 
         <ul class="tools-grid">
@@ -523,6 +529,14 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
             <a class="btn btn-line" href="https://www.ventoy.net/" target="_blank" rel="noopener">Ir para o Ventoy</a>
           </li>
         </ul>
+
+        <div class="archive-row manual-row">
+          <p><strong>Preferes ter tudo num guia?</strong> O manual de instalação (PDF, 7 páginas) explica o Rufus, o balenaEtcher e o Ventoy passo a passo, com índice, e pode ser impresso.</p>
+          <a class="btn btn-sol" href="manual-instalacao-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></svg>
+            Manual de instalação (PDF)
+          </a>
+        </div>
 
         <div class="archive-row">
           <p><strong>Ainda não tens a imagem?</strong> A Lezíria OS (6,8 GB) está alojada no Internet Archive.</p>

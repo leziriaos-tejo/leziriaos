@@ -203,6 +203,25 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
 .dl-band .actions { margin-top: 28px; }
 .dl-band .alt { margin: 18px 0 0; font-size: .92rem; }
 .dl-band .alt a { color: var(--sol); font-weight: 700; }
+/* Instalação */
+#transferir { padding-bottom: clamp(32px, 5vw, 56px); }
+.inst-inner { border-top: 1px solid rgba(255, 255, 255, .18); padding-top: clamp(32px, 5vw, 56px); }
+.inst-head { max-width: 46rem; margin-bottom: clamp(24px, 4vw, 40px); }
+.inst-head p:last-child { margin: 16px 0 0; }
+.tools-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 20px; }
+.tool { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 24px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 10px; background: rgba(255, 255, 255, .06); }
+.tool-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; }
+.tool h3 { margin: 0; color: #fff; }
+.tag-rec { padding: .3rem .5rem; border-radius: 3px; background: var(--sol); color: #0b1f4a; font: 500 .72rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.dl-band .tool p { margin: 0; }
+.dl-band .tool .plat { color: var(--azul-marca); font: 500 .82rem/1.4 var(--font-mono); }
+.tool ol { margin: 0; padding-left: 1.25rem; display: grid; gap: 8px; color: var(--on-tejo-soft); }
+.tool ol strong { color: #fff; }
+.tool .btn { margin-top: auto; justify-content: center; }
+.archive-row { margin-top: clamp(24px, 4vw, 40px); padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 10px; }
+.dl-band .archive-row p { margin: 0; max-width: 38rem; }
+.archive-row strong { color: #fff; }
+.dl-band .hint { margin: 20px 0 0; font-size: .92rem; }
 .specs { margin: 0; font-family: var(--font-mono); font-size: .9rem; }
 .specs div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 12px; padding: 11px 0; border-top: 1px solid rgba(255, 255, 255, .18); }
 .specs div:last-child { border-bottom: 1px solid rgba(255, 255, 255, .18); }
@@ -268,6 +287,7 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
         <li><a href="#tecnica">Técnica</a></li>
         <li><a href="#projeto">Projeto</a></li>
         <li><a href="#transferir">Transferir</a></li>
+        <li><a href="#instalacao">Instalação</a></li>
       </ul>
     </nav>
   </div>
@@ -291,6 +311,7 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
             Transferir ISO (x86_64)
           </a>
+          <a class="btn btn-line" href="#instalacao">Como instalar</a>
           <a class="btn btn-line" href="#projeto">Conhecer o projeto</a>
         </div>
       </div>
@@ -424,7 +445,7 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
             </a>
             <a class="btn btn-line" href="manual-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">Manual do sistema (PDF)</a>
           </div>
-          <p class="alt">Alojada no Internet Archive. <a href="https://archive.org/details/www.leziriaos.pt" rel="noopener">Ver a página da ISO</a> · <a href="https://archive.org/download/www.leziriaos.pt/www.leziriaos.pt_archive.torrent" rel="noopener">Torrent</a></p>
+          <p class="alt">Alojada no Internet Archive. <a href="https://archive.org/details/www.leziriaos.pt" target="_blank" rel="noopener">Ver a página da ISO</a> · <a href="https://archive.org/download/www.leziriaos.pt/www.leziriaos.pt_archive.torrent" rel="noopener">Torrent</a> · <a href="#instalacao">Como instalar</a></p>
         </div>
         <div>
           <dl class="specs">
@@ -447,6 +468,70 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
             <p>O Windows mostra o valor em maiúsculas e o Linux em minúsculas. É o mesmo valor.</p>
           </details>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dl-band inst" id="instalacao" aria-labelledby="instalacao-titulo">
+    <div class="wrap">
+      <div class="inst-inner">
+        <div class="inst-head">
+          <p class="kicker">Instalação</p>
+          <h2 id="instalacao-titulo">Prepara a pen USB com um destes três programas</h2>
+          <p>Precisas de uma pen USB com 16 GB ou mais (o mínimo é 8 GB), da imagem da Lezíria OS e de um dos programas abaixo. Escolhe só um: todos preparam uma pen que arranca a Lezíria OS. Tudo o que estiver na pen é apagado.</p>
+        </div>
+
+        <ul class="tools-grid">
+          <li class="tool">
+            <div class="tool-top">
+              <h3>Rufus</h3>
+              <span class="tag-rec">Recomendado</span>
+            </div>
+            <p class="plat">Windows 8 ou mais recente · em português</p>
+            <p>O mais simples para quem usa Windows.</p>
+            <ol>
+              <li>Abre o Rufus com a pen ligada.</li>
+              <li>Em <strong>Seleção de arranque</strong>, clica em <strong>SELECIONAR</strong> e escolhe a ISO da Lezíria OS.</li>
+              <li>Clica em <strong>INICIAR</strong> e espera até aparecer <strong>PRONTO</strong>.</li>
+            </ol>
+            <a class="btn btn-sol" href="https://rufus.ie/" target="_blank" rel="noopener">Ir para o Rufus</a>
+          </li>
+          <li class="tool">
+            <div class="tool-top">
+              <h3>balenaEtcher</h3>
+            </div>
+            <p class="plat">Windows 10 ou mais recente · macOS · Linux</p>
+            <p>Só três cliques. O programa pode aparecer em inglês.</p>
+            <ol>
+              <li>Clica em <strong>Flash from file</strong> e escolhe a ISO da Lezíria OS.</li>
+              <li>Clica em <strong>Select target</strong> e escolhe a pen.</li>
+              <li>Clica em <strong>Flash!</strong> e espera até aparecer <strong>Flash Complete!</strong></li>
+            </ol>
+            <a class="btn btn-line" href="https://etcher.balena.io/" target="_blank" rel="noopener">Ir para o balenaEtcher</a>
+          </li>
+          <li class="tool">
+            <div class="tool-top">
+              <h3>Ventoy</h3>
+            </div>
+            <p class="plat">Windows · Linux</p>
+            <p>Prepara a pen uma vez. Depois basta copiar imagens para lá.</p>
+            <ol>
+              <li>Abre o <strong>Ventoy2Disk.exe</strong>, escolhe a pen e clica em <strong>Install</strong>.</li>
+              <li>Copia a ISO da Lezíria OS para a pen, como um ficheiro normal.</li>
+              <li>Arranca pela pen e escolhe a Lezíria OS no menu.</li>
+            </ol>
+            <a class="btn btn-line" href="https://www.ventoy.net/" target="_blank" rel="noopener">Ir para o Ventoy</a>
+          </li>
+        </ul>
+
+        <div class="archive-row">
+          <p><strong>Ainda não tens a imagem?</strong> A Lezíria OS (6,8 GB) está alojada no Internet Archive.</p>
+          <a class="btn btn-sol" href="https://archive.org/details/www.leziriaos.pt" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+            Lezíria OS no Internet Archive
+          </a>
+        </div>
+        <p class="hint">Depois de preparar a pen, liga o computador com ela ligada e carrega várias vezes na tecla do menu de arranque (F12, F11, F9 ou Esc, conforme a marca) para escolher a pen.</p>
       </div>
     </div>
   </section>

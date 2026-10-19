@@ -209,11 +209,14 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
 .manual-row { border-color: var(--sol); background: rgba(245, 163, 0, .08); }
 .manual-row + .archive-row { margin-top: 16px; }
 .inst-head p:last-child { margin: 16px 0 0; }
-.tools-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 20px; }
+.tools-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+@media (min-width: 640px) { .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .tools-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .tool { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 24px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 10px; background: rgba(255, 255, 255, .06); }
 .tool-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; }
 .tool h3 { margin: 0; color: #fff; }
 .tag-rec { padding: .3rem .5rem; border-radius: 3px; background: var(--sol); color: #0b1f4a; font: 500 .72rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.tag-alt { padding: .3rem .5rem; border-radius: 3px; border: 1px solid rgba(255, 255, 255, .55); color: #fff; font: 500 .72rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .dl-band .tool p { margin: 0; }
 .dl-band .tool .plat { color: var(--azul-marca); font: 500 .82rem/1.4 var(--font-mono); }
 .tool ol { margin: 0; padding-left: 1.25rem; display: grid; gap: 8px; color: var(--on-tejo-soft); }
@@ -478,8 +481,8 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
         <div class="inst-top">
           <div class="inst-head">
             <p class="kicker">Instalação</p>
-            <h2 id="instalacao-titulo">Prepara a pen USB com um destes três programas</h2>
-            <p>Precisas de uma pen USB com 16 GB ou mais (o mínimo é 8 GB), da imagem da Lezíria OS e de um dos programas abaixo. Escolhe só um: todos preparam uma pen que arranca a Lezíria OS. Tudo o que estiver na pen é apagado.</p>
+            <h2 id="instalacao-titulo">Prepara a pen USB ou experimenta numa máquina virtual</h2>
+            <p>Precisas da imagem da Lezíria OS e de um dos programas abaixo. Escolhe só um. O Rufus, o balenaEtcher e o Ventoy preparam uma pen USB com 16 GB ou mais (o mínimo é 8 GB), e tudo o que estiver na pen é apagado. O VirtualBox não precisa de pen: corre a Lezíria OS numa janela do Windows, sem mexer nos teus ficheiros.</p>
           </div>
           <a class="btn btn-sol" href="manual-instalacao-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></svg>
@@ -528,10 +531,24 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
             </ol>
             <a class="btn btn-line" href="https://www.ventoy.net/" target="_blank" rel="noopener">Ir para o Ventoy</a>
           </li>
+          <li class="tool">
+            <div class="tool-top">
+              <h3>VirtualBox</h3>
+              <span class="tag-alt">Sem pen USB</span>
+            </div>
+            <p class="plat">Windows 10 ou 11 · máquina virtual</p>
+            <p>Corre a Lezíria OS numa janela do Windows, sem alterar o computador.</p>
+            <ol>
+              <li>Instala o VirtualBox e clica em <strong>New</strong>.</li>
+              <li>Escolhe a ISO da Lezíria OS e dá <strong>4 GB</strong> de memória e <strong>40 GB</strong> de disco.</li>
+              <li>Clica em <strong>Start</strong> e a Lezíria OS abre na janela.</li>
+            </ol>
+            <a class="btn btn-line" href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">Ir para o VirtualBox</a>
+          </li>
         </ul>
 
         <div class="archive-row manual-row">
-          <p><strong>Preferes ter tudo num guia?</strong> O manual de instalação (PDF, 7 páginas) explica o Rufus, o balenaEtcher e o Ventoy passo a passo, com índice, e pode ser impresso.</p>
+          <p><strong>Preferes ter tudo num guia?</strong> O manual de instalação (PDF, 8 páginas) explica o Rufus, o balenaEtcher, o Ventoy e o VirtualBox passo a passo, com índice, e pode ser impresso.</p>
           <a class="btn btn-sol" href="manual-instalacao-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></svg>
             Manual de instalação (PDF)
@@ -545,7 +562,7 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
             Lezíria OS no Internet Archive
           </a>
         </div>
-        <p class="hint">Depois de preparar a pen, liga o computador com ela ligada e carrega várias vezes na tecla do menu de arranque (F12, F11, F9 ou Esc, conforme a marca) para escolher a pen.</p>
+        <p class="hint">Se preparaste uma pen, liga o computador com ela ligada e carrega várias vezes na tecla do menu de arranque (F12, F11, F9 ou Esc, conforme a marca) para escolher a pen. Com o VirtualBox não precisas deste passo.</p>
       </div>
     </div>
   </section>

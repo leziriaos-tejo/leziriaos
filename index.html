@@ -224,6 +224,7 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
 .tool .btn { margin-top: auto; justify-content: center; }
 .archive-row { margin-top: clamp(24px, 4vw, 40px); padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 10px; }
 .dl-band .archive-row p { margin: 0; max-width: 38rem; }
+.archive-row .actions { margin-top: 0; }
 .archive-row strong { color: #fff; }
 .dl-band .hint { margin: 20px 0 0; font-size: .92rem; }
 .specs { margin: 0; font-family: var(--font-mono); font-size: .9rem; }
@@ -246,6 +247,23 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
 .verify summary { cursor: pointer; color: var(--on-tejo); font-weight: 700; }
 .verify p { margin: 12px 0 0; }
 .verify pre { margin: 8px 0 0; padding: 12px 14px; background: rgba(0, 0, 0, .3); border-radius: 6px; overflow-x: auto; font: 400 .82rem/1.5 var(--font-mono); color: #dce7ff; }
+
+/* Edições EDUCA e CORE */
+[hidden] { display: none !important; }
+.dl-head { max-width: 46rem; margin-bottom: clamp(24px, 4vw, 40px); }
+.dl-head p:last-child { margin: 16px 0 0; }
+.dl-head strong { color: #fff; }
+.editions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.edition .specs div { grid-template-columns: 8.6rem minmax(0, 1fr); }
+.edition .verify { margin-top: 0; }
+.edition .alt { font-size: .92rem; }
+.edition .fname { font-family: var(--font-mono); font-size: .8rem; overflow-wrap: anywhere; color: var(--on-tejo); }
+.btn.is-off { opacity: .55; cursor: not-allowed; pointer-events: none; }
+.dl-extra { margin-top: 28px; }
+.foot-stats { display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 22px 0 0; font-size: .88rem; }
+.foot-stats strong { color: #fff; font-variant-numeric: tabular-nums; }
+@media (max-width: 860px) { .editions { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 700px) { .edition .specs div { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
 
 /* Ecrãs estreitos */
 @media (max-width: 960px) {
@@ -436,31 +454,30 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
   <section class="dl-band" id="transferir" aria-labelledby="transferir-titulo">
     <svg class="wave wave-flip" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C180 8 360 8 540 36S900 72 1080 40S1320 4 1440 30V72H0Z" fill="currentColor"/></svg>
     <div class="wrap">
-      <div class="dl-grid">
-        <div>
-          <p class="kicker">Edição 1.0 TEJO</p>
-          <h2 id="transferir-titulo">Leva a Lezíria para a tua escola</h2>
-          <p style="margin-top:16px">Imagem ISO live para computadores x86_64, com o catálogo pedagógico, as ferramentas da Lezíria e o ambiente em português de Portugal.</p>
-          <div class="actions">
-            <a class="btn btn-sol" href="https://archive.org/download/www.leziriaos.pt/leziria-os-1.0-tejo-amd64.iso" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
-              Transferir ISO (x86_64)
-            </a>
-            <a class="btn btn-line" href="manual-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">Manual do sistema (PDF)</a>
+      <div class="dl-head">
+        <p class="kicker">Edição 1.0 TEJO</p>
+        <h2 id="transferir-titulo">Leva a Lezíria para a tua escola</h2>
+        <p>Duas edições para computadores x86_64, com Debian 13 e Xfce 4.20. A <strong>EDUCA</strong> traz o catálogo pedagógico completo. A <strong>CORE</strong> é a edição base, mais leve.</p>
+      </div>
+
+      <div class="editions">
+        <article class="tool edition" data-ia="www.leziriaos.pt" aria-labelledby="ed-educa">
+          <div class="tool-top">
+            <h3 id="ed-educa">EDUCA</h3>
+            <span class="tag-rec">Completa</span>
           </div>
-          <p class="alt">Alojada no Internet Archive. <a href="https://archive.org/details/www.leziriaos.pt" target="_blank" rel="noopener">Ver a página da ISO</a> · <a href="https://archive.org/download/www.leziriaos.pt/www.leziriaos.pt_archive.torrent" rel="noopener">Torrent</a> · <a href="#instalacao">Como instalar</a></p>
-        </div>
-        <div>
+          <p class="plat">Lezíria OS 1.0 TEJO · x86_64</p>
+          <p>Imagem ISO live com o catálogo pedagógico, as ferramentas da Lezíria e o ambiente em português de Portugal.</p>
           <dl class="specs">
-            <div><dt>Edição</dt><dd>Lezíria OS 1.0 TEJO</dd></div>
-            <div><dt>Base</dt><dd>Debian 13, Xfce 4.20</dd></div>
-            <div><dt>Arquitetura</dt><dd>x86_64</dd></div>
-            <div><dt>Idioma</dt><dd>Português (pt_PT)</dd></div>
             <div><dt>Tamanho</dt><dd>6,8 GB (6 762 921 984 bytes)</dd></div>
             <div><dt>SHA-256</dt><dd class="hash">4B2BC57D2831492EE29ECA18DB5DE1EAD7A39DD54CAFB7BACCF92C588E1E0ECF</dd></div>
-            <div><dt>Documento</dt><dd>LZOS-AUT-2026-001</dd></div>
-            <div><dt>Manual</dt><dd>PDF, 10 páginas (614 KB)</dd></div>
+            <div class="dl-stat" hidden><dt>Transferências</dt><dd data-downloads></dd></div>
           </dl>
+          <a class="btn btn-sol" href="https://archive.org/download/www.leziriaos.pt/leziria-os-1.0-tejo-amd64.iso" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
+            Transferir EDUCA
+          </a>
+          <p class="alt">Alojada no Internet Archive. <a href="https://archive.org/details/www.leziriaos.pt" target="_blank" rel="noopener">Ver a página da ISO</a> · <a href="https://archive.org/download/www.leziriaos.pt/www.leziriaos.pt_archive.torrent" rel="noopener">Torrent</a></p>
           <details class="verify">
             <summary>Como verificar a transferência</summary>
             <p>Depois de transferires a ISO, calcula o SHA-256 do ficheiro. O resultado tem de ser igual ao valor acima.</p>
@@ -470,8 +487,42 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
             <pre>sha256sum leziria-os-1.0-tejo-amd64.iso</pre>
             <p>O Windows mostra o valor em maiúsculas e o Linux em minúsculas. É o mesmo valor.</p>
           </details>
-        </div>
+        </article>
+
+        <article class="tool edition" data-ia="leziria-tejo-core-amd-64-2026-09-27-2301" aria-labelledby="ed-core">
+          <div class="tool-top">
+            <h3 id="ed-core">CORE</h3>
+            <span class="tag-alt">Base · mais leve</span>
+          </div>
+          <p class="plat">Lezíria OS 1.0 TEJO · x86_64</p>
+          <p>A edição base da Lezíria OS 1.0 TEJO, mais leve: 1,2 GB, contra 6,8 GB da EDUCA.</p>
+          <dl class="specs">
+            <div><dt>Tamanho</dt><dd>1,2 GB (1 174 405 120 bytes)</dd></div>
+            <div><dt>SHA-256</dt><dd class="hash">DF86851E29FE9669CF8A061AAEB4140A01833061DDE95D351EC4CE7478468EC9</dd></div>
+            <div class="dl-stat" hidden><dt>Transferências</dt><dd data-downloads></dd></div>
+          </dl>
+          <a class="btn btn-sol" href="https://archive.org/download/leziria-tejo-core-amd-64-2026-09-27-2301/LEZIRIA-TEJO-CORE-amd64-2026-09-27_2301.iso" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
+            Transferir CORE
+          </a>
+          <p class="alt">Alojada no Internet Archive. <a href="https://archive.org/details/leziria-tejo-core-amd-64-2026-09-27-2301" target="_blank" rel="noopener">Ver a página da ISO</a> · <a href="https://archive.org/download/leziria-tejo-core-amd-64-2026-09-27-2301/leziria-tejo-core-amd-64-2026-09-27-2301_archive.torrent" rel="noopener">Torrent</a></p>
+          <details class="verify">
+            <summary>Como verificar a transferência</summary>
+            <p>Depois de transferires a ISO, calcula o SHA-256 do ficheiro. O resultado tem de ser igual ao valor acima.</p>
+            <p>No Windows (PowerShell):</p>
+            <pre>Get-FileHash .\LEZIRIA-TEJO-CORE-amd64-2026-09-27_2301.iso -Algorithm SHA256</pre>
+            <p>No Linux:</p>
+            <pre>sha256sum LEZIRIA-TEJO-CORE-amd64-2026-09-27_2301.iso</pre>
+            <p>O Windows mostra o valor em maiúsculas e o Linux em minúsculas. É o mesmo valor.</p>
+          </details>
+        </article>
       </div>
+
+      <div class="actions dl-extra">
+        <a class="btn btn-line" href="manual-leziria-os-1.0-tejo.pdf" target="_blank" rel="noopener">Manual do sistema (PDF)</a>
+        <a class="btn btn-line" href="#instalacao">Como instalar</a>
+      </div>
+      <p class="alt">Documento de autoria <strong>LZOS-AUT-2026-001</strong>.</p>
     </div>
   </section>
 
@@ -556,11 +607,17 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
         </div>
 
         <div class="archive-row">
-          <p><strong>Ainda não tens a imagem?</strong> A Lezíria OS (6,8 GB) está alojada no Internet Archive.</p>
-          <a class="btn btn-sol" href="https://archive.org/details/www.leziriaos.pt" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
-            Lezíria OS no Internet Archive
-          </a>
+          <p><strong>Ainda não tens a imagem?</strong> As duas edições estão alojadas no Internet Archive: a EDUCA (6,8 GB) e a CORE (1,2 GB).</p>
+          <div class="actions">
+            <a class="btn btn-sol" href="https://archive.org/details/www.leziriaos.pt" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+              EDUCA no Internet Archive
+            </a>
+            <a class="btn btn-sol" href="https://archive.org/details/leziria-tejo-core-amd-64-2026-09-27-2301" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+              CORE no Internet Archive
+            </a>
+          </div>
         </div>
         <p class="hint">Se preparaste uma pen, liga o computador com ela ligada e carrega várias vezes na tecla do menu de arranque (F12, F11, F9 ou Esc, conforme a marca) para escolher a pen. Com o VirtualBox não precisas deste passo.</p>
       </div>
@@ -573,7 +630,7 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
     <div class="foot-grid">
       <div>
         <p><strong>Lezíria OS 1.0 TEJO</strong></p>
-        <p>Idealizado e concebido no Ribatejo por Pedro Nogueira (2026).</p>
+        <p>Idealizado e concebido no Ribatejo por Pedro Hugo Ferreira Nogueira (2026).</p>
         <p>Projeto educativo inclusivo com apoio digital.</p>
       </div>
       <div>
@@ -585,6 +642,10 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
         <p class="copy-msg" id="copiar-msg" role="status" aria-live="polite"></p>
       </div>
     </div>
+    <p class="foot-stats" id="estatisticas" hidden>
+      <span id="stat-visitas" hidden>Visitas ao site: <strong></strong></span>
+      <span id="stat-downloads" hidden>Transferências das ISO: <strong></strong></span>
+    </p>
   </div>
 </footer>
 
@@ -619,5 +680,64 @@ abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cur
 })();
 </script>
 
+<script>
+(function () {
+  var stats = document.getElementById('estatisticas');
+  function fmt(n) { try { return Number(n).toLocaleString('pt-PT'); } catch (e) { return String(n); } }
+  function reveal(id, value) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.querySelector('strong').textContent = value;
+    el.hidden = false;
+    if (stats) stats.hidden = false;
+  }
+  function getJSON(url) {
+    return fetch(url, { credentials: 'omit' }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    });
+  }
+  // JSONP: alternativa para o caso de o browser bloquear o pedido anterior
+  var seq = 0;
+  function jsonp(url) {
+    return new Promise(function (resolve, reject) {
+      var name = '__iaCb' + (++seq), s = document.createElement('script');
+      var t = setTimeout(function () { cleanup(); reject(new Error('timeout')); }, 8000);
+      function cleanup() { clearTimeout(t); delete window[name]; if (s.parentNode) s.parentNode.removeChild(s); }
+      window[name] = function (data) { cleanup(); resolve(data); };
+      s.onerror = function () { cleanup(); reject(new Error('erro')); };
+      s.src = url + '&callback=' + name;
+      document.head.appendChild(s);
+    });
+  }
+
+  // Visitas ao site (GoatCounter)
+  getJSON('https://leziriaos.goatcounter.com/counter/TOTAL.json').then(function (j) {
+    if (j && j.count != null && String(j.count).trim() !== '') reveal('stat-visitas', j.count);
+  }).catch(function () {});
+
+  // Transferências de cada edição (contadas pelo Internet Archive)
+  var total = 0;
+  document.querySelectorAll('[data-ia]').forEach(function (card) {
+    var id = (card.getAttribute('data-ia') || '').trim();
+    if (!id) return;
+    var url = 'https://archive.org/advancedsearch.php?q=identifier%3A%22' + encodeURIComponent(id) +
+              '%22&fl%5B%5D=downloads&rows=1&output=json';
+    getJSON(url).catch(function () { return jsonp(url); }).then(function (j) {
+      var d = j && j.response && j.response.docs && j.response.docs[0];
+      if (!d || d.downloads == null) return;
+      var n = Number(d.downloads);
+      if (!isFinite(n)) return;
+      var row = card.querySelector('.dl-stat');
+      if (row) { row.querySelector('[data-downloads]').textContent = fmt(n); row.hidden = false; }
+      total += n;
+      reveal('stat-downloads', fmt(total));
+    }).catch(function () {});
+  });
+})();
+</script>
+
+<script data-goatcounter="https://leziriaos.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
